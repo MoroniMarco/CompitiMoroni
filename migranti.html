@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title> Tabella e Grafico Migranti </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 22px;
+            border: 2px black;
+        }
+        th, td {
+            border: 1px black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #cdcccc;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" onchange="leggiFile(this)">
+    <table id="demo" ></table>
+    <br>
+    <canvas id="myCanvas" width="1000" height="500">
+    </canvas>
+    <script>
+        function leggiFile(input) {
+            let file = input.files[0];
+            let lettoreF = new FileReader();
+            lettoreF.readAsText(file);
+
+            lettoreF.onload = function() {
+                let contenuto = lettoreF.result;
+                creaTab(contenuto);
+            }
+        }
+        function creaTab(tab){
+        let righe= tab.split("\n") //divido il contenuto in righe
+        let col=[]
+        let col1=[]
+        for (let i = 0; i < righe.length; i++) {
+            col[i] = righe[i].split(',')
+        }
+        for (let i = 0; i < col.length; i++) {
+            for (let j = 0; j < col[i].length; j++) {
+                col1[2*i+j] = col [i][j].replaceAll('"','') //uso il metod per togliere le virgolette
+            }
+        }
+        for (let i = 0; i < col1.length; i++) { //ciclo che stampa la tabella
+        if (i%2==0){
+                document.getElementById("demo").innerHTML += "<tr><td>" + col1[i] + "</td><td>" + col1[i+1] + "</td></tr>";
+        }
+        }
+        creaGrafico(col1); // metodo che crea il grafico
+        }
+        function creaGrafico(tab){
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        let year =[]
+        let numero=[]
+        for (let i = 2; i < tab.length; i++) {
+            if (i%2==0){
+                year.push(tab[i])
+                numero.push(Number(tab[i+1]))
+            }
+        }
+ 
+        let max= massi(numero);
+
+        ctx.beginPath();
+
+        // Set a start-point
+        ctx.moveTo(50,450); //sceglie un punto nel grafico
+
+        // Set an end-point
+        ctx.lineTo(50,0); // disegna una riga
+        // Set a start-point
+        ctx.moveTo(1000,450);
+
+        // Set an end-point
+        ctx.lineTo(50,450);
+        // Set a start-point
+
+        ctx.font = "10px Arial";
+                ctx.fillStyle = "blue";//cambio colore e font delle scritte
+                ctx.fillText('0',40,465); //scrive 0 alle cordinate x = 40 e y = 465
+
+        massimo=Math.round(max/1000)*1000; // mettiamo un punto massimo
+        whidt=950
+        height=450
+        Ux=whidt/(year.length+1)
+        Uy=410/massimo
+        console.log(Ux+';'+Uy)
+        for (let i =0;i<year.length;i++){
+            ctx.moveTo(whidt/(year.length+1)*i+50+whidt/year.length,height);
+            ctx.lineTo(whidt/(year.length+1)*i+50+whidt/year.length,height+10);
+            ctx.font = "10px Arial";
+            ctx.fillStyle = "blue";
+            ctx.fillText(year[i],whidt/(year.length+1)*i+50+whidt/year.length-12,height+18);
+        }
+        for (let i =1;i<11;i++){
+            ctx.moveTo(50,height/11*i);
+                ctx.lineTo(40,height/11*i);
+                ctx.font = "10px Arial";
+                ctx.fillStyle = "blue";
+                ctx.fillText(massimo/10*(11-i),15,height/11*i-3);
+            }
+
+        X=50;
+        Y=450;
+        ctx.moveTo(X,Y);
+        for (let i =0;i<numero.length;i++){
+        X+=Ux
+        Y=450-parseInt(numero[i]*Uy);
+                console.log(X+','+Y)
+        ctx.lineTo(X,Y);
+        }
+        ctx.stroke(); //per disegnare
+        }
+        function massi(num){ //trovo il numero massimo per dividere il grafico sull'asse delle y
+            let max=num[0]
+            for(let i = 1;i<num.length;i++){
+                if(num[i]>max){
+                    max=num[i]
+                }
+            }
+            return max
+        }
+    </script>
+</body>
+</html>
