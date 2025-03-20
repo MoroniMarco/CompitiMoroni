@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizza Dati</title>
+</head>
+<body>
+    <h2>Dati Registrati</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Indirizzo</th>
+                <th>Età</th>
+                <th>Sesso</th>
+            </tr>
+        </thead>
+        <tbody id="tabellaDati"></tbody>
+    </table>
+
+    <a href="array collection oggetti.html">Torna alla registrazione</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Recupero dati dal localStorage
+            let dati = localStorage.getItem("datiAnagrafici");
+
+            if (dati) {
+                let persona = JSON.parse(dati);
+
+                // Popolamento della tabella
+                let riga = `<tr>
+                    <td>${persona.nome}</td>
+                    <td>${persona.cognome}</td>
+                    <td>${persona.indirizzo}</td>
+                    <td>${persona.eta}</td>
+                    <td>${persona.sesso}</td>
+                </tr>`;
+                document.getElementById("tabellaDati").innerHTML = riga;
+            } else {
+                document.getElementById("tabellaDati").innerHTML = "<tr><td colspan='5'>Nessun dato registrato</td></tr>";
+            }
+        });
+    </script>
+</body>
+</html>

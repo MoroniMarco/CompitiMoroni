@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione Dati</title>
+</head>
+<body>
+    <h2>Inserisci i tuoi dati</h2>
+    <form id="formDati">
+        <label>Nome: <input type="text" id="nome" required></label><br>
+        <label>Cognome: <input type="text" id="cognome" required></label><br>
+        <label>Indirizzo: <input type="text" id="indirizzo" required></label><br>
+        <label>Età: <input type="number" id="eta" required></label><br>
+        <label>Sesso:
+            <select id="sesso">
+                <option value="Maschio">Maschio</option>
+                <option value="Femmina">Femmina</option>
+                <option value="ChatGPT">ChatGPT</option>
+            </select>
+        </label><br>
+        <button type="submit">Salva Dati</button>
+    </form>
+    
+    <script>
+        document.getElementById("formDati").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita il refresh della pagina
+            
+            // Creazione oggetto con i dati inseriti
+            let dati = {
+                nome: document.getElementById("nome").value,
+                cognome: document.getElementById("cognome").value,
+                indirizzo: document.getElementById("indirizzo").value,
+                eta: document.getElementById("eta").value,
+                sesso: document.getElementById("sesso").value
+            };
+            
+            // Salvataggio nel localStorage
+            localStorage.setItem("datiAnagrafici", JSON.stringify(dati));
+
+            // Reindirizzamento alla pagina di visualizzazione
+            window.location.href = "visualizza.html";
+        });
+    </script>
+</body>
+</html>
