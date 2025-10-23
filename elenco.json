@@ -1,0 +1,126 @@
+{
+    "elenco" :
+    [
+    {
+      "nome": "Marco",
+        "cognome":"Moroni",
+        "anni": 18,
+        "DN": 2007
+    },
+  {
+      "nome": "Matteo",
+        "cognome":"Rubino",
+        "anni": 125,
+        "DN": 1900
+    },
+  {
+      "nome": "Francesco",
+        "cognome":"Folla",
+        "anni": 110,
+        "DN": 1935
+    },
+    {
+        "nome":"Stefano",
+        "cognome":"Merigo",
+        "anni":17,
+        "DN": 2008
+    },
+{
+      "nome": "Matteo",
+        "cognome":"Caenazzo",
+        "anni": 16,
+        "DN": 2009
+    },
+  {
+      "nome": "Davide",
+        "cognome":"Piaggi",
+        "anni": 25,
+        "DN": 2000
+    },
+  {
+      "nome": "Francesco",
+        "cognome":"Vivaldo",
+        "anni": 8,
+        "DN": 2017
+    },
+    {
+        "nome":"Simone",
+        "cognome":"Kristo",
+        "anni":20,
+        "DN": 2005
+    }
+,
+{
+      "nome": "Riccardo",
+        "cognome":"Dalbello",
+        "anni": 24,
+        "DN": 2001
+    },
+  {
+      "nome": "Alessandro",
+        "cognome":"Re",
+        "anni": 225,
+        "DN": 1800
+    },
+  {
+      "nome": "Samuele",
+        "cognome":"Max",
+        "anni": 55,
+        "DN": 1970
+    },
+    {
+        "nome":"Daniele",
+        "cognome":"Kim",
+        "anni":40,
+        "DN": 1985
+    },
+{
+      "nome": "Marco",
+        "cognome":"Imboldi",
+        "anni": 10,
+        "DN": 2015
+    },
+  {
+      "nome": "Cristian",
+        "cognome":"Luongo",
+        "anni": 18,
+        "DN": 2007
+    },
+  {
+      "nome": "Davide",
+        "cognome":"Gostoli",
+        "anni": 21,
+        "DN": 2004
+    },
+    {
+        "nome":"Giuseppe",
+        "cognome":"Vaccaro",
+        "anni":45,
+        "DN": 1980
+    },
+{
+      "nome": "Oscar",
+        "cognome":"Martella",
+        "anni": 26,
+        "DN": 1999
+    },
+  {
+      "nome": "Tamer",
+        "cognome":"Qaddura",
+        "anni": 35,
+        "DN": 1990
+    },
+  {
+      "nome": "Filippo",
+        "cognome":"Monteverdi",
+        "anni": 9,
+        "DN": 2014
+    },
+    {
+        "nome":"Paolo",
+        "cognome":"Petrozzi",
+        "anni":19,
+        "DN": 2006
+    }
+    ]
+    }
