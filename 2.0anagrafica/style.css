@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Contenitore principale */
+.container {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4b4f58;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f8f9fa;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #50b2d6;
+    background: white;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #50b2d6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #4b94bb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #50b2d6;
+    color: white;
+    font-weight: 600;
+}
+
+td {
+    font-size: 16px;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f7f8fa;
+}
+
+tr:hover {
+    background-color: #e8f4f9;
+}
+
+/* Tabella - Modalità demo */
+#demo {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#demo th {
+    background-color: #50b2d6;
+    color: white;
+    padding: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#demo td {
+    padding: 12px;
+    color: #333;
+}
+
+#demo tr:last-child td {
+    border-bottom: none;
+}
+
+#demo tr:hover {
+    background-color: #e8f4f9;
+}
+
+#demo tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    #demo {
+        font-size: 14px;
+    }
+
+    #demo th,
+    #demo td {
+        padding: 10px;
+    }
+}
