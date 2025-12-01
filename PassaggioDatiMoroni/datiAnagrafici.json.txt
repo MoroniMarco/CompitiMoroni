@@ -1,0 +1,13 @@
+{
+    "persona": [
+        {
+            "nome": "Marco",
+            "cognome": "Moroni",
+            "dataNascita": "2007-10-16",
+            "luogoNascita": "Tradate",
+            "indirizzo": "Via",
+            "citta": "canegrate",
+            "cap": "20039"
+        }
+    ]
+}
