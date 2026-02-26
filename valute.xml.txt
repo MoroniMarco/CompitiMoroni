@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valute base="EUR">
+
+    <valuta codice="EUR" nome="Euro" fattore="1" />
+    <valuta codice="USD" nome="Dollaro USA" fattore="1.08" />
+
+</valute>
